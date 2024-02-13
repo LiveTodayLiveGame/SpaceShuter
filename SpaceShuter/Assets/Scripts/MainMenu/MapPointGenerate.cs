@@ -14,7 +14,6 @@ namespace LiveToday
         private SavedLevelData _levelData;
         private LevelProgress _levelProgress;
         private CalculateSwapMenu _calculate;
-        private MapPoint _prefabMapPoint;
 
         [Inject]
         private void Construct(SavedLevelData levelData, CalculateSwapMenu calculate)
@@ -34,7 +33,7 @@ namespace LiveToday
         {
             var openedIndex = GetLostUnlockedLevelIndex();
 
-            _pool = new PoolObject<MapPoint>(_prefab, this._poolCount, this.transform);
+             _pool = new PoolObject<MapPoint>(_prefab, _poolCount, transform);
 
             for (int i = openedIndex; i < openedIndex + _poolCount; i++)
             {

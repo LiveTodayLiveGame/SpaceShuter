@@ -29,7 +29,7 @@ namespace LiveToday
                 callBack.Invoke((T)loadedData);
             }
             else
-                callBack.Invoke(default(T));
+                callBack.Invoke(default);
         }
             
 

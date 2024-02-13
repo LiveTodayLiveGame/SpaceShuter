@@ -13,6 +13,7 @@ namespace LiveToday
         {
             InitStorageService();
             InitSwapSnapMenu();
+            InitFactory();
         }
 
         private void InitStorageService()
@@ -29,6 +30,12 @@ namespace LiveToday
             Container.Bind<CalculateSwapMenu>().AsSingle();
             Container.BindInterfacesAndSelfTo<SwapSnapMenu>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<SwapMenuView>().FromInstance(_view).AsSingle();
+        }
+
+        private void InitFactory()
+        {
+            Container.Bind<PrefabsProvider>().AsSingle();
+            Container.Bind<Factory>().AsSingle();
         }
     }
 }
